@@ -42,4 +42,15 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt(KEY, dataToSave);
         editor.apply();
     }
+    //метод для удаления данных
+    private void deleteKey(){
+        SharedPreferences.Editor editor = pref.edit();
+//        editor.clear();//очистить всё
+        editor.remove(KEY); //очистить по ключевому слову
+        editor.apply();
+    }
+    //кнопка для удаления данных
+    public void onClickDeleteAll(View view) {
+        deleteKey();
+    }
 }
